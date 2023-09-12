@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<body>
+    <h1>Tasks</h1>
+
+    <div class="task_form">
+        <h2>Add Task</h2>
+
+        <form action="/add">
+            <label>Task</label>
+            <input name="task" type="text">
+            <label>deadline</label>
+            <input name="deadline" type="date" />
+            <input type="submit" value="add">
+        </form>
+    </div>
+
+    <div class="tasklist">
+        <h2>Current Tasks</h2>
+        <table border="1" style="border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th class="hidden">ID</th>
+                    <th>task</th>
+                    <th>deadline</th>
+                    <th>state</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="task :${tasklist}">
+                    <td class="hidden" th:text="${task.id}"></td>
+                    <td th:text="${task.task}"></td>
+                    <td width="100px" th:text="${task.deadline}"></td>
+                    <td width="50px" th:text="${task.done} ? 'done' : not yet"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
