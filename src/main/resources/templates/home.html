@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tasks</title>
+    <link th:href="@{/home.css}" rel="stylesheet">
 </head>
 <body>
     <h1>Tasks</h1>
@@ -35,7 +36,7 @@
                     <td class="hidden" th:text="${task.id}"></td>
                     <td th:text="${task.task}"></td>
                     <td width="100px" th:text="${task.deadline}"></td>
-                    <td width="50px" th:text="${task.done} ? 'done' : not yet"></td>
+                    <td width="50px" th:text="${task.done} ? 'done' : 'not yet'"></td>
                 </tr>
             </tbody>
         </table>
