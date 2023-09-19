@@ -27,8 +27,8 @@
                 <tr>
                     <th class="hidden">ID</th>
                     <th>task</th>
-                    <th>deadline</th>
-                    <th>state</th>
+                    <th width="150px">deadline</th>
+                    <th width="100px">state</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +37,12 @@
                     <td th:text="${task.task}"></td>
                     <td width="100px" th:text="${task.deadline}"></td>
                     <td width="50px" th:text="${task.done} ? 'done' : 'not yet'"></td>
+                    <td>
+                        <form action="/delete">
+                            <button type="submit" id="delete_button">Delete</button>
+                            <input type="hidden" name="id" th:value="${task.id}" />
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>

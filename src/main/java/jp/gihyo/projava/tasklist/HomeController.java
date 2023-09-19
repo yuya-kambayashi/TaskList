@@ -45,4 +45,11 @@ public class HomeController {
 
         return "redirect:/list";
     }
+
+    @GetMapping("/delete")
+    String addItem(@RequestParam("id") String id) {
+        dao.delete(id);
+
+        return "redirect:/list";
+    }
 }
