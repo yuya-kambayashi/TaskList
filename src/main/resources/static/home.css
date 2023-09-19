@@ -30,3 +30,13 @@ input {
     border: 1px solid;
     border-collapse: collapse;
 }
+
+#updateDialog {
+    display: none;
+    background-color: #FFFFFF;
+    border: 2px double;
+    width: 500px;
+    position: fixed;
+    top: 120px;
+    z-index:9999;
+}

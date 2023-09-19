@@ -52,4 +52,18 @@ public class HomeController {
 
         return "redirect:/list";
     }
+
+    @GetMapping("/update")
+    String updateItem(@RequestParam("id") String id,
+                      @RequestParam("task") String task,
+                      @RequestParam("deadline") String deadline,
+                      @RequestParam("done") boolean done
+                      ) {
+
+        TaskItem item = new TaskItem(id, task, deadline, done);
+
+        dao.update(item);
+
+        return "redirect:/list";
+    }
 }
